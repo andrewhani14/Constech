@@ -110,10 +110,7 @@ $(function() {
     $(function () {
         contentWayPoint();
     });
-    
-    //  YouTubePopUp
-    $("a.vid").YouTubePopUp();
-    
+        
     // Testimonials owlCarousel
     $('.testimonials .owl-carousel').owlCarousel({
         loop:true,
