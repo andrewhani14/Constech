@@ -1,15 +1,14 @@
 <h2>Edit About Section</h2>
 <?php
-         if(isset($_GET['msg'])){
-             
-  if($_GET['msg']=='updated'){
-      ?>
+    if(isset($_GET['msg'])){
+if($_GET['msg']=='updated'){
+    ?>
 <div class="alert alert-success text-center" role="alert">
     Successfully Updated !
 </div>
 <?php
-  }  
- } 
+}  
+} 
 ?>
 <form method="post" action="php/uabout.php" enctype="multipart/form-data">
     <div class="form-row">

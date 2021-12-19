@@ -147,34 +147,33 @@ $data=mysqli_fetch_array($queryrun);
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <?php
-     if(isset($_GET['edithome'])){ 
-     include('php/home.php');
-     }else if(isset($_GET['editabout'])){
-         include('php/about.php');      
-     }else if(isset($_GET['editteam'])){
-      include('php/team.php');      
-  }else if(isset($_GET['editcarousel'])){
-      include('php/carousel.php');      
+    if(isset($_GET['edithome'])){ 
+    include('php/home.php');
+    }else if(isset($_GET['editabout'])){
+        include('php/about.php');      
+    }else if(isset($_GET['editteam'])){
+    include('php/team.php');      
+}else if(isset($_GET['editcarousel'])){
+    include('php/carousel.php');      
     }else if(isset($_GET['editresume'])){
-       include('php/resume.php');
-     }else if(isset($_GET['editportfolio'])){
-      include('php/portfolio.php');
-     }else if(isset($_GET['editseo'])){
-         include('php/seo.php');
+    include('php/resume.php');
+    }else if(isset($_GET['editportfolio'])){
+    include('php/portfolio.php');
+    }else if(isset($_GET['editseo'])){
+        include('php/seo.php');
     
-     }else if(isset($_GET['editprofile'])){ ?>
+    }else if(isset($_GET['editprofile'])){ ?>
                 <h2>Edit Profile</h2>
                 <?php
-         if(isset($_GET['msg'])){
-             
-  if($_GET['msg']=='updated'){
-      ?>
+        if(isset($_GET['msg'])){
+if($_GET['msg']=='updated'){
+    ?>
                 <div class="alert alert-success text-center" role="alert">
                     Successfully Updated !
                 </div>
                 <?php
-  }  
- } 
+}  
+} 
 ?>
                 <form method="post" action="php/uprofile.php">
                     <div class="form-row">
@@ -197,8 +196,8 @@ $data=mysqli_fetch_array($queryrun);
                     <input type="submit" name="uprofile" class="btn btn-primary" value="Save Changes">
                 </form>
                 <?php }else{
-         include('php/welcome.php');
-     } ?>
+        include('php/welcome.php');
+    } ?>
 
             </main>
         </div>

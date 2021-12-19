@@ -40,7 +40,7 @@
                         $runquery4= mysqli_query($db,$query4);
                         while($data4=mysqli_fetch_array($runquery4)){
                     ?>
-					 <div class="col-md-4">
+					<div class="col-md-4">
 						<div class="item">
 							<div class="img"> <img src="img/team/<?=$data4['t_picture']?>"></div>
 							<div class="info">
