@@ -3,10 +3,10 @@ include('../../include/db.php');
 include('checkupload.php');
 
 $target_dir = "../../img/projects/";
+// $project_ID = document.getElementById('project_ID');
 
 
 if(isset($_POST['galleryAdd'])){
-    $PID = $_POST['id'];
     $upload_folder = "../../img/projects/";
     $file_location = $upload_folder . basename($_FILES["picture_path"]["name"]);
     $projectgPhoto=$_FILES['picture_path']['name'];
@@ -19,17 +19,16 @@ if(isset($_POST['galleryAdd'])){
         $pdone = Upload('picture_path',$upload_folder);
     }
 
-// $project_ID=mysqli_real_escape_string($db,$_POST['id']);   
+$project_ID=mysqli_real_escape_string($db,$_POST['project_ID']);   
 
 $query="INSERT INTO project_images (project_ID,picture_path) ";
-$query.="VALUES ('$PID','$projectgPhoto')";
+$query.="VALUES ('$project_ID','$projectgPhoto')";
 $queryrun=mysqli_query($db,$query);
 if($queryrun){
     header("location:../?editportfolio=true&msg=updated");
 }    
 
 }    
-
 
 if(isset($_GET['delg'])){
     $id=$_GET['delg'];
