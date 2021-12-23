@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -34,7 +33,6 @@
             </div>
         </div>
     </div>
-</section>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/scriptmap.js"></script>
 </body>

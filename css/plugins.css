@@ -2,7 +2,6 @@
 			[ All Css Plugins & Helper Classes File ]
 -----------------------------------------------------------------*/
 
-
 /* == bootstrap == */
 
 @import url("plugins/bootstrap.min.css");
@@ -27,7 +26,3 @@
 /* == magnific-popup gallery  == */
 
 @import url("plugins/magnific-popup.css");
-
-/* == YouTubePopUp == */
-
-@import url("plugins/YouTubePopUp.css");

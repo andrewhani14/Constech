@@ -62,7 +62,6 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.stellar.min.js"></script>
 	<script src="js/jquery.magnific-popup.js"></script>
-	<script src="js/YouTubePopUp.js"></script>
 	<script src="js/custom.js"></script>
 </body>
 </html>
