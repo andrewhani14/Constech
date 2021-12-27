@@ -60,7 +60,7 @@
 		</section>
 		<!-- Parallax -->
 		<section class="testimonials">
-			<div class="background bg-img bg-fixed section-padding pb-0" data-background="img/banner2.jpg" data-overlay-dark="3" style="padding: 200px 0;">
+			<div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/<?=$data['image_path']?>" data-overlay-dark="3" style="padding: 200px 0;">
 			</div>
 		</section>
 		<!-- Footer -->

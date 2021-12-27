@@ -9,7 +9,7 @@
 			</div>
 		</section>
 		<!-- Header Banner -->
-		<section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-light="3" data-background="img/banner.jpg"> </section>
+		<section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-light="3" data-background="img/slider/<?=$data['image_path']?>"></section>
 		<!-- Not found 404 -->
 		<section class="pb-90">
 			<div class="container">

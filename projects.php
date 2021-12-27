@@ -9,7 +9,7 @@
 			</div>
 		</section>
 		<!-- Header Banner -->
-		<section class="banner-header banner-img bg-img bg-fixed pb-0" data-background="img/banner.jpg" data-overlay-light="3"></section>
+		<section class="banner-header banner-img bg-img bg-fixed pb-0" data-background="img/slider/<?=$data['image_path']?>" data-overlay-light="3"></section>
 		<!-- Projects -->
 		<section class="projects section-padding2">
 			<div class="container">
@@ -19,12 +19,12 @@
 				</div>
 				<div class="row">
 					<?php
-                    		$query5 = "SELECT * FROM portfolio";
-							$runquery5= mysqli_query($db,$query5);
-							while($data5=mysqli_fetch_array($runquery5)){
-								$projectID = $data5['id'];
-    						?>
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+                    	$query5 = "SELECT * FROM portfolio";
+						$runquery5= mysqli_query($db,$query5);
+						while($data5=mysqli_fetch_array($runquery5)){
+							$projectID = $data5['id'];
+    				?>
+					<div css="col-md-6 animate-box" data-animate-effect="fadeInUp">
 						<div class="item">
 							<div class="position-re o-hidden"> <img src="img/projects/<?=$data5['projectpic']?>" alt=""> </div>
 							<div class="con">
@@ -39,7 +39,7 @@
 		</section>
 		<!-- Parallax -->
 		<section class="testimonials">
-			<div class="background bg-img bg-fixed section-padding pb-0" data-background="img/banner2.jpg" data-overlay-dark="3" style="padding: 200px 0;">
+			<div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/<?=$data['image_path']?>" data-overlay-dark="3" style="padding: 200px 0;">
 			</div>
 		</section>
 		<!-- Footer -->
