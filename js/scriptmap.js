@@ -57,8 +57,6 @@
 	window.watchResize(function(){
 		var size = window.getActiveMQ().replace("break-","");		
 		window.DubaiMap = window.getActiveMQ();
-		
-		
 	});
 
 	$(window).on('load',function(){
@@ -123,8 +121,9 @@ MapResize( jQuery, window );
 			.fadeIn('slow')
 			.appendTo('#places-map .map')
 			.html(
-				'<h1>' + title + '</h1>' +
-				'<a href="' + link + '">See Jobs</a>' +
+				'<h1>' + title + '</h1><br><br>' +
+				'<p>' + link + '</p>' +
+				'<p> Project Type: ' + location + '</p>' +
 				'<img src="https://jeffbridgforth.com/codepen/' + src + '" alt="" />' +
 				'<span class="close-btn"></span>'
 			);
