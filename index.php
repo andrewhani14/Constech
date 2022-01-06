@@ -121,7 +121,7 @@
 </section>
 <!-- Projects Map -->
 <section class="section-padding">
-<iframe src="map.php" title="project_locations" width="100%" height="600px" style="border:none;padding:0px 40px 0px 40px">
+<iframe src="map.php" title="project_locations" width="100%" height="730px" style="border:none;padding:0px 40px 0px 40px;position:relative;">
 </iframe>
 </section>
 </div>

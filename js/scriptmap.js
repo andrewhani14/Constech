@@ -62,8 +62,6 @@
 	$(window).on('load',function(){
 		window.watchResize(function(){
 			var $body = $('#places-map');
-			$body.css('overflow', 'hidden').height();
-			$body.css('overflow', 'auto');
 		});
 	});
 
@@ -108,23 +106,28 @@ MapResize( jQuery, window );
 				buildmapInfo(
 					$(this).data('mapLink'),
 					$(this).data('mapTitle'),
+					$(this).data('area'),
+					$(this).data('date'),
+					$(this).data('addclass'),
 					$(this).data('mapImage'),
 					$(this).data('jobListings')
 				);
 			});
 	}
 
-	function buildmapInfo ( location, title, src, link )
+	function buildmapInfo ( location, title, area, date, addclass , src, link)
 	{
 		$('<div id="map-info">')
-			.addClass(location)
+			.addClass(addclass)
 			.fadeIn('slow')
 			.appendTo('#places-map .map')
 			.html(
 				'<h1>' + title + '</h1><br><br>' +
-				'<p>' + link + '</p>' +
-				'<p> Project Type: ' + location + '</p>' +
-				'<img src="https://jeffbridgforth.com/codepen/' + src + '" alt="" />' +
+				'<p> Project Location: <span> ' + link + '</span></p><br>' +
+				'<p> Project Type: <span> ' + location + '</span> </p><br>' +
+				'<p> Built-up Area: <span> ' + area + '</span> </p>' +
+				'<p> Completion Date: <span> ' + date + '</span> </p>' +
+				'<img src="img/map/' + src + '" alt="" />' +
 				'<span class="close-btn"></span>'
 			);
 		// Close map info if click anywhere outside of it

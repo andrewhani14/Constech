@@ -9,9 +9,9 @@
 			</div>
 		</section>
 		<!-- Header Banner -->
-		<section class="banner-header banner-img bg-img bg-fixed pb-0" data-background="img/slider/<?=$data['image_path']?>" data-overlay-light="3"></section>
+		<section class="banner-header banner-img bg-img bg-fixed pb-0" data-background="img/projects/<?=$data['projectpic']?>" data-overlay-light="3"></section>
 		<!-- Projects -->
-		<section class="projects section-padding2">
+		<section class="projects section-padding">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
@@ -24,7 +24,7 @@
 						while($data5=mysqli_fetch_array($runquery5)){
 							$projectID = $data5['id'];
     				?>
-					<div css="col-md-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
 						<div class="item">
 							<div class="position-re o-hidden"> <img src="img/projects/<?=$data5['projectpic']?>" alt=""> </div>
 							<div class="con">

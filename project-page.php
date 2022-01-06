@@ -64,9 +64,9 @@ $data9 = mysqli_fetch_array($runquery9);
 					<div class="col-md-12">
 						<div class="d-sm-flex align-items-center justify-content-between">
 							<div class="projects-prev-next-left">
-								<a href="projects-page.php?pid=<?php echo $id - 1; ?>"> <i class="ti-arrow-left"></i> Previous Project</a>
+								<a href="project-page.php?pid=<?php echo $id - 1; ?>"> <i class="ti-arrow-left"></i> Previous Project</a>
 							</div> <a href="projects.php"><i class="ti-layout-grid3-alt"></i></a>
-							<div class="projects-prev-next-right"> <a href="projects-page.php?<?php echo $id + 1; ?>">Next Project <i class="ti-arrow-right"></i></a> </div>
+							<div class="projects-prev-next-right"> <a href="project-page.php?pid=<?php echo $id + 1; ?>">Next Project <i class="ti-arrow-right"></i></a> </div>
 						</div>
 					</div>
 				</div>

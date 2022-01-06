@@ -31,7 +31,10 @@
 				</div>
 				<!-- Map Section-->
 				<div class="row">
-					<div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+					<div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+						<h2><b>LOCATION</b></h2>
+					</div>
+					<div class="col-md-8 mb-30 animate-box" data-animate-effect="fadeInUp">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.30120302504!2d54.94756108834282!3d25.076381466775672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2seg!4v1632831562290!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					</div>
 				</div>
