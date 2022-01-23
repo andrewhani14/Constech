@@ -1,5 +1,7 @@
 <!-- Header -->
-<?php include('include/header.php'); ?>
+<?php include('include/header.php'); 
+$page = "about";
+?>
 	<!-- Content -->
 	<div class="content-wrapper">
 		<!-- Lines -->

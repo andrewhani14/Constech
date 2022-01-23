@@ -1,5 +1,8 @@
 <!-- Header -->
-<?php include('include/header.php'); ?>
+<?php
+$page = "home";
+include('include/header.php');
+?>
 <!-- Slider -->
 <header class="header slider-fade">
     <div class="owl-carousel owl-theme">
