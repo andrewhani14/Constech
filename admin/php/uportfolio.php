@@ -1,26 +1,25 @@
 <?php
 include('../../include/db.php');
-include('checkupload.php');
+include('compress.php');
 $id=$_POST['id'];
 $query="SELECT * FROM portfolio WHERE id='$id'";
 
 $queryrun=mysqli_query($db,$query);
 $data=mysqli_fetch_array($queryrun);
 
-$target_dir = "../img/projects/";
-
 if(isset($_POST['pupdate'])){
 
 $upload_folder = "../../img/projects/";
 $file_location = $upload_folder . basename($_FILES["projectpic"]["name"]);
-$projectpic=$_FILES['projectpic']['name']; 
+$projectpic=$_FILES['projectpic']['name'];
+$d = compressedImage($_FILES['projectpic']['tmp_name'],$file_location,75);
 
-if(move_uploaded_file($_FILES['projectpic']['tmp_name'], $file_location)){
+if(move_uploaded_file($d, $file_location)){
     if($projectpic==""){
         $projectpic=$data['projectpic'];
     }
 }else{
-    $pdone = Upload('projectpic',$upload_folder);
+    echo 'Error uploading image, Please try again.';
 }
 
 $projectname=mysqli_real_escape_string($db,$_POST['projectname']);
@@ -42,16 +41,18 @@ $query.="project_category='$project_category' WHERE id='$id'";
 echo $query;    
 $queryrun=mysqli_query($db,$query);
 if($queryrun){
-    header("location:../?editportfolio=true#done");}    
+    header("location:../?editportfolio=true&msg=updated");}    
 }    
 }
 
 if(isset($_GET['del'])){
     $id=$_GET['del'];
     $query="DELETE FROM portfolio WHERE id='$id'";
+    $query2="DELETE FROM project_images WHERE project_ID='$id'";
     $queryrun=mysqli_query($db,$query);
-if($queryrun){
-    header("location:../?editportfolio=true#done");
+    $queryrun2=mysqli_query($db,$query2);
+if($queryrun && $queryrun2){
+    header("location:../?editportfolio=true&msg=updated");
 }
 }
 
@@ -60,13 +61,14 @@ if(isset($_POST['addtoportfolio'])){
 $upload_folder = "../../img/projects/";
 $file_location = $upload_folder . basename($_FILES["projectpic"]["name"]);
 $projectpic=$_FILES['projectpic']['name']; 
+$d = compressedImage($_FILES['projectpic']['tmp_name'],$file_location,75);
 
-if(move_uploaded_file($_FILES['projectpic']['tmp_name'], $file_location)){
+if(move_uploaded_file($d, $file_location)){
     if($projectpic==""){
         $projectpic=$data['projectpic'];
     }
 }else{
-    $pdone = Upload('projectpic',$upload_folder);
+    echo 'Error uploading image, Please try again.';
 }
 
 $projectname=mysqli_real_escape_string($db,$_POST['projectname']);
@@ -86,7 +88,5 @@ $queryrun=mysqli_query($db,$query);
 if($queryrun){
     header("location:../?editportfolio=true&msg=updated");
 }    
-
 }    
-    
 }

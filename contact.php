@@ -1,6 +1,7 @@
 <!-- Header -->
-<?php include('include/header.php');
+<?php 
 $page = "contact";
+include('include/header.php');
 ?>
 	<!-- Content -->
 	<div class="content-wrapper">
@@ -21,7 +22,7 @@ $page = "contact";
 				</div>
 				<div class="row mb-90">
 					<div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-						<p><b>CONSTECH CONSTRUCTION</b></p>
+						<h5><b>CONSTECH CONSTRUCTION</b></h5>
 						<p><?=$data['contact_text']?></p>
 					</div>
 					<div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">

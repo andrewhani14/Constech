@@ -1,20 +1,20 @@
 <?php
 include('../../include/db.php');
-include('checkupload.php');
-$target_dir = "../img/team/";
+include('compress.php');
 
 if(isset($_POST['addtoteam'])){
 
 $upload_folder = "../../img/team/";
 $file_location = $upload_folder . basename($_FILES["t_picture"]["name"]);
 $tpicture=$_FILES['t_picture']['name']; 
+$d = compressedImage($_FILES['t_picture']['tmp_name'],$file_location,60);
 
-if(move_uploaded_file($_FILES['t_picture']['tmp_name'], $file_location)){
+if(move_uploaded_file($d, $file_location)){
     if($tpicture==""){
         $tpicture=$data['t_picture'];
     }
 }else{
-    $pdone = Upload('t_picture',$upload_folder);
+    echo 'Error uploading image, Please try again.';
 }
 
 $t_name=mysqli_real_escape_string($db,$_POST['t_name']);
@@ -33,13 +33,14 @@ if(isset($_POST['tupdate'])){
     $upload_folder = "../../img/team/";
     $file_location = $upload_folder . basename($_FILES["t_picture"]["name"]);
     $tpicture=$_FILES['t_picture']['name']; 
-    
-    if(move_uploaded_file($_FILES['t_picture']['tmp_name'], $file_location)){
+    $d = compressedImage($_FILES['t_picture']['tmp_name'],$file_location,60);
+
+    if(move_uploaded_file($d, $file_location)){
         if($tpicture==""){
             $tpicture=$data['t_picture'];
         }
     }else{
-        $pdone = Upload('t_picture',$upload_folder);
+        echo 'Error uploading image, Please try again.';
     }
     $ID=$_POST['ID'];
     $t_name=mysqli_real_escape_string($db,$_POST['t_name']);
@@ -47,7 +48,7 @@ if(isset($_POST['tupdate'])){
     $query="UPDATE team SET t_name='$t_name',t_position ='$t_position',t_picture ='$tpicture' WHERE ID='$ID'";
         $run=mysqli_query($db,$query);
         if($run){
-            header("location:../?editteam=true#teamlist");
+            header("location:../?editteam=true&msg=updated");
         }
 }
 

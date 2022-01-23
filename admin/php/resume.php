@@ -75,7 +75,7 @@
                             </button>
                         </div>
                         <div class="modal-body" id="skilleditbox">
-                            <form action="php/uresume.php" method="post">
+                            <form action="php/uresume.php" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?=$data2['id']?>">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">

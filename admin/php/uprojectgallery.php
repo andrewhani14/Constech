@@ -1,20 +1,19 @@
 <?php
 include('../../include/db.php');
-include('checkupload.php');
-
-$target_dir = "../../img/projects/";
+include('compress.php');
 
 if(isset($_POST['galleryAdd'])){
     $upload_folder = "../../img/projects/";
     $file_location = $upload_folder . basename($_FILES["picture_path"]["name"]);
     $projectgPhoto=$_FILES['picture_path']['name'];
+    $d = compressedImage($_FILES['picture_path']['tmp_name'],$file_location,75);
     
-    if(move_uploaded_file($_FILES['picture_path']['tmp_name'], $file_location)){
+    if(move_uploaded_file($d, $file_location)){
         if($projectgPhoto==""){
             $projectgPhoto=$data['picture_path'];
         }
     }else{
-        $pdone = Upload('picture_path',$upload_folder);
+        echo 'Error uploading image, Please try again.';
     }
 
 $project_ID=mysqli_real_escape_string($db,$_POST['project_ID']);   

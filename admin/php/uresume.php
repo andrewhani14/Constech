@@ -1,20 +1,20 @@
 <?php
 include('../../include/db.php');
-include('checkupload.php');
-$target_dir = "../img/services/";
+include('compress.php');
 
 if(isset($_POST['addtoresume'])){
 
 $upload_folder = "../../img/services/";
 $file_location = $upload_folder . basename($_FILES["icon"]["name"]);
-$siteicon=$_FILES['icon']['name']; 
+$siteicon=$_FILES['icon']['name'];
+$d = compressedImage($_FILES['icon']['tmp_name'],$file_location,75);
 
-if(move_uploaded_file($_FILES['icon']['tmp_name'], $file_location)){
+if(move_uploaded_file($d, $file_location)){
     if($siteicon==""){
         $siteicon=$data['icon'];
     }
 }else{
-    $pdone = Upload('icon',$upload_folder);
+    echo 'Error uploading image, Please try again.';
 }
 
 $title=mysqli_real_escape_string($db,$_POST['title']);
@@ -25,19 +25,30 @@ $queryrun=mysqli_query($db,$query);
 if($queryrun){
     header("location:../?editresume=true&msg=updated");
 }    
-
 }    
 
-
 if(isset($_POST['rupdate'])){
-    $id=$_POST['id'];
+
+$upload_folder = "../../img/services/";
+$file_location = $upload_folder . basename($_FILES["icon"]["name"]);
+$siteicon=$_FILES['icon']['name'];
+$d = compressedImage($_FILES['icon']['tmp_name'],$file_location,75);
+
+if(move_uploaded_file($d, $file_location)){
+    if($siteicon==""){
+        $siteicon=$data['icon'];
+    }
+}else{
+    echo 'Error uploading image, Please try again.';
+}
+
+$id=$_POST['id'];
 $title=mysqli_real_escape_string($db,$_POST['title']);
 $workdesc=mysqli_real_escape_string($db,$_POST['workdesc']); 
-$siteicon=mysqli_real_escape_string($db,$_POST['icon']); 
- $query="UPDATE resume SET title='$title',workdesc ='$workdesc',icon ='$siteicon' WHERE id='$id'";
+$query="UPDATE resume SET title='$title',workdesc ='$workdesc',icon ='$siteicon' WHERE id='$id'";
     $run=mysqli_query($db,$query);
     if($run){
-        header("location:../?editresume=true#rlist");
+        header("location:../?editresume=true&msg=updated");
     }
 }
 
