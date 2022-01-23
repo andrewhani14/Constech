@@ -25,8 +25,7 @@ if(move_uploaded_file($_FILES['siteicon']['tmp_name'], $file_location)){
 $title=mysqli_real_escape_string($db,$_POST['title']);
 $keyword=mysqli_real_escape_string($db,$_POST['keywords']);
 $desc=mysqli_real_escape_string($db,$_POST['description']);
-  
- 
+
 if($pdone=="error"){
     header("location:../?editseo=true&msg=error");
 }else{

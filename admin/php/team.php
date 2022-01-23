@@ -74,7 +74,7 @@
                             </button>
                         </div>
                         <div class="modal-body" id="skilleditbox">
-                            <form action="php/uteam.php" method="post">
+                            <form action="php/uteam.php" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="ID" value="<?=$data2['ID']?>">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">

@@ -3,8 +3,6 @@ include('../../include/db.php');
 include('checkupload.php');
 
 $target_dir = "../../img/projects/";
-// $project_ID = document.getElementById('project_ID');
-
 
 if(isset($_POST['galleryAdd'])){
     $upload_folder = "../../img/projects/";

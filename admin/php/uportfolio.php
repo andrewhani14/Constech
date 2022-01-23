@@ -28,7 +28,7 @@ $plocation=mysqli_real_escape_string($db,$_POST['plocation']);
 $project_category=mysqli_real_escape_string($db,$_POST['project_category']);  
 $pyear=mysqli_real_escape_string($db,$_POST['pyear']);  
 $project_desc=mysqli_real_escape_string($db,$_POST['project_desc']);   
- 
+
 if($pdone=="error"){
     header("location:../?edithome=true&msg=error");
 }else{

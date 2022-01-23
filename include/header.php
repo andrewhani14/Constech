@@ -46,11 +46,11 @@ $runquery2 = mysqli_query($db,$query2);
 			<!-- Navbar links -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link nav-color" href="index.php">Home</a></li>
-					<li class="nav-item"><a class="nav-link nav-color" href="about.php">About</a></li>
-					<li class="nav-item"><a class="nav-link nav-color" href="index.php#services">Services</a></li>
-					<li class="nav-item"><a class="nav-link nav-color" href="projects.php">Projects</a></li>
-					<li class="nav-item"><a class="nav-link nav-color" href="contact.php">Contact</a></li>
+					<li class="nav-item"><a class="nav-link nav-color <?php echo ($page == "home" ? "active" : "")?>" href="index.php">Home</a></li>
+					<li class="nav-item"><a class="nav-link nav-color <?php echo ($page == "about" ? "active" : "")?>" href="about.php">About</a></li>
+					<li class="nav-item"><a class="nav-link nav-color <?php echo ($page == "services" ? "active" : "")?>" href="index.php#services">Services</a></li>
+					<li class="nav-item"><a class="nav-link nav-color <?php echo ($page == "projects" ? "active" : "")?>" href="projects.php">Projects</a></li>
+					<li class="nav-item"><a class="nav-link nav-color <?php echo ($page == "contact" ? "active" : "")?>" href="contact.php">Contact</a></li>
 				</ul>
 			</div>
 		</div>

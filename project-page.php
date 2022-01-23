@@ -61,14 +61,26 @@ $data9 = mysqli_fetch_array($runquery9);
 		<section class="projects-prev-next">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-						<div class="d-sm-flex align-items-center justify-content-between">
-							<div class="projects-prev-next-left">
-								<a href="project-page.php?pid=<?php echo $id - 1; ?>"> <i class="ti-arrow-left"></i> Previous Project</a>
-							</div> <a href="projects.php"><i class="ti-layout-grid3-alt"></i></a>
-							<div class="projects-prev-next-right"> <a href="project-page.php?pid=<?php echo $id + 1; ?>">Next Project <i class="ti-arrow-right"></i></a> </div>
-						</div>
-					</div>
+						<?php
+							// Next button 
+							$next = mysqli_query($db, "SELECT * FROM portfolio WHERE id>$id order by id ASC");
+							if($row = mysqli_fetch_array($next))
+							{
+
+							echo '<div class="col-md-4 projects-prev-next-left"><a href="project-page.php?pid='.$row['id'].'"><i class="ti-arrow-left"></i> Previous Project</a></div>';  
+							} 
+
+							echo '<div class="col-md-4"><a href="projects.php"><i class="ti-layout-grid3-alt"></i></a></div>';
+
+							// Previous button 
+							$previous= mysqli_query($db, "SELECT * FROM portfolio WHERE id<$id order by id DESC");
+
+							if($row = mysqli_fetch_array($previous))
+							{
+
+							echo '<div class="col-md-4 projects-prev-next-right"><a href="project-page.php?pid='.$row['id'].'">Next Project <i class="ti-arrow-right"></i></a></div>';  
+							} 
+							?>
 				</div>
 			</div>
 		</section>

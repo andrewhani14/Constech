@@ -29,15 +29,26 @@ if($queryrun){
 }    
 
 if(isset($_POST['tupdate'])){
-    $ID=$_POST['ID'];
-$t_name=mysqli_real_escape_string($db,$_POST['t_name']);
-$t_position=mysqli_real_escape_string($db,$_POST['t_position']); 
-$tpicture=mysqli_real_escape_string($db,$_POST['t_picture']); 
- $query="UPDATE team SET t_name='$t_name',t_position ='$t_position',t_picture ='$tpicture' WHERE ID='$ID'";
-    $run=mysqli_query($db,$query);
-    if($run){
-        header("location:../?editteam=true#teamlist");
+
+    $upload_folder = "../../img/team/";
+    $file_location = $upload_folder . basename($_FILES["t_picture"]["name"]);
+    $tpicture=$_FILES['t_picture']['name']; 
+    
+    if(move_uploaded_file($_FILES['t_picture']['tmp_name'], $file_location)){
+        if($tpicture==""){
+            $tpicture=$data['t_picture'];
+        }
+    }else{
+        $pdone = Upload('t_picture',$upload_folder);
     }
+    $ID=$_POST['ID'];
+    $t_name=mysqli_real_escape_string($db,$_POST['t_name']);
+    $t_position=mysqli_real_escape_string($db,$_POST['t_position']); 
+    $query="UPDATE team SET t_name='$t_name',t_position ='$t_position',t_picture ='$tpicture' WHERE ID='$ID'";
+        $run=mysqli_query($db,$query);
+        if($run){
+            header("location:../?editteam=true#teamlist");
+        }
 }
 
 if(isset($_GET['del'])){

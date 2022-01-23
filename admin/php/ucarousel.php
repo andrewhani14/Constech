@@ -25,20 +25,29 @@ $queryrun=mysqli_query($db,$query);
 if($queryrun){
     header("location:../?editcarousel=true&msg=updated");
 }    
-
 }    
 
-
 if(isset($_POST['cupdate'])){
-    $ID=$_POST['ID'];
-$image_title=mysqli_real_escape_string($db,$_POST['image_title']);
-$image_caption=mysqli_real_escape_string($db,$_POST['image_caption']); 
-$imagepath=mysqli_real_escape_string($db,$_POST['image_path']); 
- $query="UPDATE image_carousel SET image_title='$image_title',image_caption ='$image_caption',image_path ='$imagepath' WHERE ID='$ID'";
-    $run=mysqli_query($db,$query);
-    if($run){
-        header("location:../?editcarousel=true#clist");
+
+    $upload_folder = "../../img/slider/";
+    $file_location = $upload_folder . basename($_FILES["image_path"]["name"]);
+    $imagepath=$_FILES['image_path']['name']; 
+    
+    if(move_uploaded_file($_FILES['image_path']['tmp_name'], $file_location)){
+        if($imagepath==""){
+            $imagepath=$data['image_path'];
+        }
+    }else{
+        $pdone = Upload('image_path',$upload_folder);
     }
+    $ID=$_POST['ID'];
+    $image_title=mysqli_real_escape_string($db,$_POST['image_title']);
+    $image_caption=mysqli_real_escape_string($db,$_POST['image_caption']); 
+    $query="UPDATE image_carousel SET image_title='$image_title',image_caption ='$image_caption',image_path ='$imagepath' WHERE ID='$ID'";
+        $run=mysqli_query($db,$query);
+        if($run){
+            header("location:../?editcarousel=true#clist");
+        }
 }
 
 if(isset($_GET['del'])){
