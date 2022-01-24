@@ -7,7 +7,7 @@ $upload_folder = "../../img/services/";
 $file_location = $upload_folder . basename($_FILES["icon"]["name"]);
 $siteicon=$_FILES['icon']['name'];
 
-if(move_uploaded_file($_FILES['icon']['tmp_name'], $file_location)){
+if(move_uploaded_file($d, $file_location)){
     if($siteicon==""){
         $siteicon=$data['icon'];
     }
