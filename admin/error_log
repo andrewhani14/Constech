@@ -1,0 +1,13 @@
+[24-Jan-2022 04:54:56 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/azdt7dlbqecx/public_html/include/db.php on line 2
+[24-Jan-2022 04:54:56 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, bool given in /home/azdt7dlbqecx/public_html/admin/index.php:8
+Stack trace:
+#0 /home/azdt7dlbqecx/public_html/admin/index.php(8): mysqli_query()
+#1 {main}
+  thrown in /home/azdt7dlbqecx/public_html/admin/index.php on line 8
+[24-Jan-2022 04:55:10 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/azdt7dlbqecx/public_html/include/db.php on line 2
+[24-Jan-2022 04:55:10 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, bool given in /home/azdt7dlbqecx/public_html/admin/index.php:8
+Stack trace:
+#0 /home/azdt7dlbqecx/public_html/admin/index.php(8): mysqli_query()
+#1 {main}
+  thrown in /home/azdt7dlbqecx/public_html/admin/index.php on line 8
+[24-Jan-2022 08:56:43 UTC] PHP Warning:  Undefined array key "username" in /home/azdt7dlbqecx/public_html/admin/index.php on line 59

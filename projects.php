@@ -1,6 +1,7 @@
 <!-- Header -->
-<?php include('include/header.php');
+<?php 
 $page = "projects";
+include('include/header.php');
 ?>
 	<!-- Content -->
 	<div class="content-wrapper">
@@ -11,7 +12,7 @@ $page = "projects";
 			</div>
 		</section>
 		<!-- Header Banner -->
-		<section class="banner-header banner-img bg-img bg-fixed pb-0" data-background="img/projects/<?=$data['projectpic']?>" data-overlay-light="3"></section>
+		<section class="banner-header banner-img bg-img bg-fixed pb-0" data-background="img/slider/<?=$data['image_path']?>" data-overlay-light="3"></section>
 		<!-- Projects -->
 		<section class="projects section-padding">
 			<div class="container">

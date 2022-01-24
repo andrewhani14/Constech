@@ -390,13 +390,16 @@ input[type="checkbox"] {
     left: 0;
     top: 0;
     width: 100%;
-    background: transparent;
+    background: rgba(53, 53, 53, 0.501);
     z-index: 99;
     padding-right: 0;
     padding-left: 0;
     padding-top: 30px;
-    padding-bottom: 0;
+    padding-bottom: 30px;
     height: 90px;
+    -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+
 }
 
 .navbar .icon-bar {
@@ -416,7 +419,7 @@ input[type="checkbox"] {
 }
 
 .navbar .navbar-nav .nav-link.nav-color {
-    color: #272727;
+    color: #fff;
 }
 
 .navbar .navbar-nav .nav-link:hover {
@@ -424,7 +427,8 @@ input[type="checkbox"] {
 }
 
 .navbar .navbar-nav .active {
-    color: #322176 !important;
+    color: #8dcf53 !important;
+    font-weight: 400;
 }
 
 .nav-scroll {
@@ -457,7 +461,7 @@ input[type="checkbox"] {
 }
 
 .nav-scroll .navbar-nav .active {
-    color: #322176 !important;
+    color: #8dcf53 !important;
 }
 
 .nav-scroll .navbar-nav .logo {
@@ -1458,6 +1462,7 @@ hr {
 .projects .item img {
     -webkit-transition: all .5s;
     transition: all .5s;
+    height: 350px;
 }
 
 .projects .item .con {

@@ -1,20 +1,21 @@
 <?php
 include('../../include/db.php');
-include('checkupload.php');
-$target_dir = "../img/";
+include('compress.php');
 
 if(isset($_POST['save'])){        
 
 $upload_folder = "../../img/";
 $file_location = $upload_folder . basename($_FILES["about_picture"]["name"]);
-$about_picture=$_FILES['about_picture']['name']; 
+$about_picture=$_FILES['about_picture']['name'];
+$d = compressedImage($_FILES['about_picture']['tmp_name'],$file_location,75);
 
-if(move_uploaded_file($_FILES['about_picture']['tmp_name'], $file_location)){
+
+if(move_uploaded_file($d, $file_location)){
     if($about_picture==""){
         $about_picture=$data['about_picture'];
     }
 }else{
-    $pdone = Upload('about_picture',$upload_folder);
+    echo 'Error uploading image, Please try again.';
 }
 
 $heading=mysqli_real_escape_string($db,$_POST['ptitle']);

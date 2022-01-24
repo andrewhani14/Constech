@@ -1,12 +1,10 @@
 <?php
 include('../../include/db.php');
-include('checkupload.php');
 $query="SELECT * FROM basic_setup";
 
 $queryrun=mysqli_query($db,$query);
 $data=mysqli_fetch_array($queryrun);
 
-$target_dir = "../img/";
 
 if(isset($_POST['seo'])){    
 
@@ -19,7 +17,7 @@ if(move_uploaded_file($_FILES['siteicon']['tmp_name'], $file_location)){
         $siteicon=$data['siteicon'];
     }
 }else{
-    $pdone = Upload('siteicon',$upload_folder);
+    echo 'Error uploading image, Please try again.';
 }
     
 $title=mysqli_real_escape_string($db,$_POST['title']);
