@@ -41,7 +41,7 @@ $runquery2 = mysqli_query($db,$query2);
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
 			<!-- Logo -->
-			<a class="logo" href="index.php"><img src="img/logo.png" alt="logo" height="30px"></a>
+			<a class="logo" href="index.php"><img src="img/constech-logo.png" alt="logo" height="30px"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
 			<!-- Navbar links -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
